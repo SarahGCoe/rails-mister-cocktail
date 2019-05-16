@@ -1,6 +1,17 @@
 <h1>All the cocktails available</h1>
 <% @cocktails.each do |cocktail| %>
-<p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+<p></p>
 <% end %>
 
 <p><%= link_to "Create a new cocktail", new_cocktail_path %></p>
+
+<div class="container mt-3">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url('cai.png')">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        <%= link_to "+", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+      </div>
+      <% end %>
+  </div>
+</div>
