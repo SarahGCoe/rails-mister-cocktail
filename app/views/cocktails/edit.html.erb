@@ -1,0 +1,8 @@
+edit.hmtl.erb
+<%= simple_form_for @cocktail do |f| %>
+<%= f.input :name %>
+<%= f.button :submit %>
+<% end %>
+<p><%= link_to "Back to cocktail", cocktail_path(@cocktail) %></p>
+<p><%= link_to "Back to the cocktails' list", cocktails_path %></p>
+
